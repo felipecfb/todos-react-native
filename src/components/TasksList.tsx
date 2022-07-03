@@ -34,10 +34,12 @@ export function TasksList({ tasks, toggleTaskDone, removeTask }: TasksListProps)
                 activeOpacity={0.7}
                 style={styles.taskButton}
                 //TODO - use onPress (toggle task) prop
+                onPress={() => toggleTaskDone(item.id)}
               >
                 <View 
                   testID={`marker-${index}`}
-                  //TODO - use style prop 
+                  //TODO - use style prop
+                  style={[styles.taskMarker, item.done && styles.taskMarkerDone]}
                 >
                   { item.done && (
                     <Icon 
@@ -50,6 +52,7 @@ export function TasksList({ tasks, toggleTaskDone, removeTask }: TasksListProps)
 
                 <Text 
                   //TODO - use style prop
+                  style={[styles.taskText, item.done && styles.taskTextDone]}
                 >
                   {item.title}
                 </Text>
