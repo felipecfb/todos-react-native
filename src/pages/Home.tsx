@@ -15,7 +15,6 @@ export function Home() {
       done: false,
     }
     setTasks([...tasks, data]);
-    console.log(tasks);
   }
 
   function handleToggleTaskDone(id: number) {
